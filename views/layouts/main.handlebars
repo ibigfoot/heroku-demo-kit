@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Heroku Connect Demo</title>
+	<link rel="stylesheet" type="text/css" href="/styles/salesforce-lightning-design-system.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/styles/main.css" />
+</head>
+<body>
+	<div class="slds-grid slds-wrap">
+		<div class="slds-col slds-size--1-of-1 header">
+			<div class="slds-global-header slds-grid slds-grid--align-spread " style="min-height: 7em;">
+				<div class="slds-col slds-size--1-of-6 slds-global-header__item">
+					<div class="slds-global-header__logo">
+						<a href="/">
+							<span class="slds-avatar slds-avatar--large"><img src="/images/logo-noname.svg"/></span>
+						</a>
+					</div>
+				</div>
+				<div class="slds-col slds-size--4-of-6 slds-global-header__item slds-align--absolute-center slds-text-heading--large">
+					Heroku Connect Demo
+				</div>
+				<div class="slds-col slds-size--1-of-6 slds-global-header__item slds-m-horizontal--x-large">
+
+					{{#if auth}}
+						<div class="slds-media ">
+							<div class="slds-media__body slds-p-top--xx-small">
+				    			${display_name}<br />
+				    			${username}<br />
+				    			<a href="/logout"><button class="slds-button">Logout</button></a>
+				  			</div>
+				  			<div class="slds-media__figure--reverse">
+				    			<span class="slds-avatar slds-avatar--circle"><img src="${photos.thumbnail}?oauth_token=${access_token}" alt="${display_name}" /></span> 
+				  			</div>
+						</div>
+					{{else}}
+						<div id="logon_buttons" class="slds-m-top--large">
+							<a id="prod" class="logon-link"><button class="slds-button slds-button--neutral">Production</button></a>
+							<a id="sandbox" class="logon-link"><button class="slds-button slds-button--neutral">Sandbox</button></a>
+						</div>
+						<div id="custom_domain_elements" class="slds-form-element" style="display:none">
+							<label class="slds-form-element__label" for="custom_domain_input">Custom Domain</label>
+							<div class="slds-form-element__control">
+								<input id="custom_domain_input" class="slds-input" type="text" placeholder="<<your>>.my.salesforce.com" />
+							</div>
+						</div>
+						<div class="slds-form-element slds-m-top--x-small">
+							<div class="slds-form-element__control">
+								<span class="slds-checkbox">
+									<input type="checkbox" name="custom_domain" id="custom_domain" />
+									<label class="slds-checkbox__label" for="custom_domain">
+										<span class="slds-checkbox--faux"></span>
+										<span class="slds-form-element__label">Use Custom Domain</span>
+										<a id="custom" class="logon-link" style="display:none"><button class="slds-button">Logon</button></a>
+									</label>
+								</span>
+							</div>
+						</div>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+
+		<div class="slds-col slds-size--1-of-1">
+			{{{body}}}
+		</div>
+
+		<div class="slds-col slds-size--1-of-1 slds-align--absolute-center" >
+			<footer>
+				Built with <a href="https://nodejs.org" target="_blank">Node.js</a>, the 
+				<a href="https://www.lightningdesignsystem.com/" target="_blank">Salesforce Lightning Design System</a> and 
+				<a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction" target="_blank">
+					<svg aria-hidden="true" class="slds-icon" style="fill: rgb(72,69,141);">
+							<use xlink:href="/images/logo-heroku-white.svg#header_-_Heroku"></use>
+					</svg>
+				</a>
+			</footer>
+		</div>
+
+	</div>
+	<script type="text/javascript" src="/js/client.js"></script>
+</body>
+</html>
