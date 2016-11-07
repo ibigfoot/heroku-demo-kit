@@ -6,7 +6,7 @@
  	"keywords": ["node", "express", "static", "herokuconnect"],
 	"image": "heroku/nodejs",
  	"addons": [
- 		"heroku-postgres",
+ 		"heroku-postgresql",
  		"herokuconnect"
  	],
  	"env": {
