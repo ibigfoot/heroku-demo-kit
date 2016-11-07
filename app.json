@@ -1,8 +1,13 @@
 {
-  "name": "Start on Heroku: Node.js",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
+  "name": "Heroku Demo Kit",
+  "description": "A node application that contains a few Heroku demo scenarios",
+  "repository": "https://github.com/ibigfoot/heroku-demo-kit",
   "logo": "http://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["node", "express", "static"],
-  "image": "heroku/nodejs"
+  "keywords": ["node", "express", "static", "heroku connect"],
+  "image": "heroku/nodejs",
+  "addons": ["heroku-postgres"],
+  "env": {
+    "HEROKU_CONNECT_SCHEMA": {
+      "value":"salesforce"
+    }
 }
