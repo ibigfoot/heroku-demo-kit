@@ -3,11 +3,11 @@
  	"description": "A node application that contains a few Heroku demo scenarios",
  	"repository": "https://github.com/ibigfoot/heroku-demo-kit",
  	"logo": "http://node-js-sample.herokuapp.com/node.svg",
- 	"keywords": ["node", "express", "static", "heroku connect"],
+ 	"keywords": ["node", "express", "static", "herokuconnect"],
 	"image": "heroku/nodejs",
  	"addons": [
  		"heroku-postgres",
- 		"heroku-connect"
+ 		"herokuconnect"
  	],
  	"env": {
  		"HEROKU_CONNECT_SCHEMA": {
