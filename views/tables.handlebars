@@ -1,5 +1,61 @@
 <div class="slds-grid slds-wrap">
-{{#each tables}}
-	<a href="/table/{{table_name}}">{{table_name}}</a>
-{{/each}}
+
+{{#if tables}}
+	<div class="slds-col slds-size--1-of-1 slds-align--absolute-center slds-p-top--medium">	
+		<span class="slds-text-heading--medium">Tables Synced in Schema '{{schema}}'</span>
+	</div>
+	<div class="slds-col slds-size--1-of-1 slds-align--absolute-center">
+		<table class="slds-table slds-table--bordered slds-table--cell-buffer" style="width:70%">
+			<thead>
+				<tr class="slds-text-title--caps">
+					<th scope="col">
+						<div class="slds-truncate" title="Table Name">Table Name</div>
+					</th>
+					<th scope="col">
+						<div class="slds-truncate" title="Schema">Schema</div>
+					</th>
+					<th scope="col">
+						<div class="slds-truncate" title="Is Insertable">Is Insertable</div>
+					</th>
+					<th scope="col">
+						<div class="slds-truncate" title="Is Typed">Is Typed</div>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each tables}}
+				<tr>
+					<th scope="row" data-label="Table Name">
+						<div class="slds-truncate" title="{{table_name}}">
+							<a href="/table/{{table_name}}">{{table_name}}</a>
+						</div>
+					</th>
+					<td data-label="Schema">
+						<div class="slds-truncate" title="{{table_schema}}">{{table_schema}}</div>
+					</td>
+					<td data-label="Is Insertable">
+						<div class="slds-truncate" title="{{is_insertable_into}}">{{is_insertable_into}}</div>
+					</td>
+					<td data-label="Is Typed">
+						<div class="slds-truncate" title="{{is_typed}}">{{is_typed}}</div>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+{{else}}
+<div class="slds-col slds-size--1-of-1">
+It looks like you have yet to <a href="https://devcenter.heroku.com/articles/getting-started-with-heroku-and-connect-without-local-dev#introduction" target="_blank">configure</a> your Heroku Connect! It's easy, just head over to your Heroku App Dashboard, click on the Connect add-on under resources and sync to Salesforce. 
+
+Once you have done this the tables synchronised will appear here, allowing you to select and modify. 
 </div>
+{{/if}}
+
+</div>
+
+
+
+
+
+

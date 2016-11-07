@@ -1,11 +1,30 @@
-<h1>Table Details for {{table_name}}</h1>
+
+<div class="slds-page-header">
+	<h1 class="slds-page-header__title">Record Detail for {{table_name}}</h1>
+</div>
+
 <div class="slds-grid slds-wrap">
-{{#each values}}
+
+	{{#each records}}
 	<div class="slds-col slds-size--1-of-3">
-		----- RECORD ---- <br />
-		{{#mapLoop this}}
-			{{key}} - <input type="text" value="{{value}}"/> <br />
-		{{/mapLoop}}
+		<div class="slds-m-around--small">
+			<article class="slds-card slds-card--narrow">
+				<div class="slds-card__header cardHeader">
+					RECORD - {{this.name}}
+				</div>
+				<div class="slds-card__body hiddenBody padded-10px-bottom">
+	    			<div class="slds-card__body--inner">
+	    				<form method="POST" action="/data">
+	    					<input type="hidden" name="table_name" value="{{table_name}}"/>
+	    				{{#each this.fields}}
+	    					{{> (lookup . 'data_type')}}	    					
+	    				{{/each}}
+	    				<input type="submit" value="update" />
+	    				</form>
+	    			</div>
+	    		</div>
+			</article>
+		</div>
 	</div>
-{{/each}}
+	{{/each}}
 </div>

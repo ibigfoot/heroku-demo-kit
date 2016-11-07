@@ -15,4 +15,8 @@ $(document).ready(function() {
 		$("#logon_buttons").toggle();
 		$("#custom").toggle();
 	});
+
+	$(".cardHeader").click(function() {
+		$(this).next().toggle();
+	})
 });

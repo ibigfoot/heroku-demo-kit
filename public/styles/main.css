@@ -1,3 +1,21 @@
-body {
+html, body {
 	padding:20px;
+	height: 100%;
+}
+
+.container {
+	min-height: 100%;
+	margin-bottom: -50px;
+}
+
+.footer, .page-wrap:after {
+	height: 50px;
+}
+
+.hiddenBody {
+	display: none;
+}
+
+.padded-10px-bottom {
+	padding-bottom: 10px;
 }
