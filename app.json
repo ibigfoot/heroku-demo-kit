@@ -5,7 +5,7 @@
   "logo": "http://node-js-sample.herokuapp.com/node.svg",
   "keywords": ["node", "express", "static", "heroku connect"],
   "image": "heroku/nodejs",
-  "addons": ["heroku-postgres"],
+  "addons": ["heroku-postgres","heroku-connect"],
   "env": {
     "HEROKU_CONNECT_SCHEMA": {
       "value":"salesforce"
