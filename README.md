@@ -30,9 +30,14 @@ $ heroku create
 $ git push heroku master
 $ heroku open
 ```
+Then add Heroku Postgres and Heroku Connect dev plans to your application. 
+
 or
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+Once you have setup with the addons you will need to sync your Heroku Connect to some tables, then these synced fields should be visible in the app.
+
 
 ## Documentation
 
