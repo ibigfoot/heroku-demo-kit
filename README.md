@@ -15,7 +15,16 @@ $ npm install
 
 You will need a Postgres DB to run this locally. What I do when building locally is create an Heroku app and create an [Heroku Connect](https://devcenter.heroku.com/articles/heroku-connect) configuration. Once you have synced a couple of tables from your Salesforce instance, [export](https://devcenter.heroku.com/articles/heroku-postgres-import-export) your database so you can import to your local Postgres.
 
-[Create your .env file](https://devcenter.heroku.com/articles/heroku-local#copy-heroku-config-vars-to-your-local-env-file) that will contain the necessary environment variables. Then...
+[Create your .env file](https://devcenter.heroku.com/articles/heroku-local#copy-heroku-config-vars-to-your-local-env-file) that will contain the necessary environment variables. 
+
+```
+HEROKU_CONNECT_SCHEMA=salesforce
+DATABASE_URL=<your_local_postgres_url>
+REDIS_URL=<your_local_redis_url>
+COOKIE_SECRET=a_super_secret_key_for_protecting_cookies
+```
+
+Then...
 
 ```sh
 $ heroku local
