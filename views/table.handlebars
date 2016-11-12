@@ -14,8 +14,11 @@
 					<div class="slds-card__body hiddenBody padded-10px-bottom">
 		    			<div class="slds-card__body--inner">
 		    				<form method="POST" action="/data">	
+		    					<input type="hidden" name="orig_id" value="{{orig_id}}" />
 			    				{{#each this.fields}}
-			    					{{> (lookup . 'data_type')}}	    					
+			    					{{> (lookup . 'data_type')}}	
+			    					<div>{{data_type}}</div>
+			    					<div>value - {{value}}</div>    					
 			    				{{/each}}
 		    				<input type="submit" value="update" />
 		    				</form>
