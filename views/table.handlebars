@@ -4,27 +4,25 @@
 </div>
 
 <div class="slds-grid slds-wrap">
-
 	{{#each records}}
-	<div class="slds-col slds-size--1-of-3">
-		<div class="slds-m-around--small">
-			<article class="slds-card slds-card--narrow">
-				<div class="slds-card__header cardHeader">
-					RECORD - {{this.name}}
-				</div>
-				<div class="slds-card__body hiddenBody padded-10px-bottom">
-	    			<div class="slds-card__body--inner">
-	    				<form method="POST" action="/data">
-	    					<input type="hidden" name="table_name" value="{{table_name}}"/>
-	    				{{#each this.fields}}
-	    					{{> (lookup . 'data_type')}}	    					
-	    				{{/each}}
-	    				<input type="submit" value="update" />
-	    				</form>
-	    			</div>
-	    		</div>
-			</article>
+		<div class="slds-col slds-size--1-of-3">
+			<div class="slds-m-around--small">
+				<article class="slds-card slds-card--narrow">
+					<div class="slds-card__header cardHeader">
+						RECORD - {{this.name}}
+					</div>
+					<div class="slds-card__body hiddenBody padded-10px-bottom">
+		    			<div class="slds-card__body--inner">
+		    				<form method="POST" action="/data">	
+			    				{{#each this.fields}}
+			    					{{> (lookup . 'data_type')}}	    					
+			    				{{/each}}
+		    				<input type="submit" value="update" />
+		    				</form>
+		    			</div>
+		    		</div>
+				</article>
+			</div>
 		</div>
-	</div>
 	{{/each}}
 </div>
