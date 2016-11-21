@@ -19,4 +19,6 @@ $(document).ready(function() {
 	$(".cardHeader").click(function() {
 		$(this).next().toggle();
 	})
+
+	$("input[class='datepicker']").datepicker();
 });
