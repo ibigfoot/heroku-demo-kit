@@ -21,7 +21,9 @@ var RedisStore = require('connect-redis')(session);
 
 app.use(session({  
   store: new RedisStore({client: redisClient}),
-  secret: process.env.COOKIE_SECRET
+  secret: process.env.COOKIE_SECRET,
+  resave: false,
+  saveUninitialized: false
 }));
 
 
