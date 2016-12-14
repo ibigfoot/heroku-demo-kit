@@ -13,7 +13,10 @@
  	"env": {
  		"HEROKU_CONNECT_SCHEMA": {
   			"value":"salesforce"
-    	}
+    	},
+		"COOKIE_SECRET": {
+			"value":"a_super_secret_key_for_protecting_cookies"
+		}
 	}
 }
 
